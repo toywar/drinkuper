@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>[toywar:drinkup]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+    </style>
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+<link rel="shortcut icon" href="/static/ico/icon.gif">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="masthead">
+        <h3 align=center class="muted">[toywar:drinkup]</h3>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active"><a href="">[home]</a></li>
+                <li><a href="past.html">[passed:drinkups]</a></li>
+                <li><a href="about.html">[about]</a></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+      </div>
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h2>Welcome to toywar & manshion11 [drinkup]!</h2>
+        <p class="lead">We are a group of enthusiasts who love to just sit and have a drink Pepsi (or beer ;) ). But the most important thing - to talk about different topics in the cozy company!<br/><small>Get more information about us on page <a href="about.html">[about]</a>.</small><br/><h2>Join now! Let's get [drinkup] today!</h2>
+        </p>
+        <a data-toggle="modal" data-target="#request" class="btn btn-large btn-success">Request [drinkup]!</a>
+	<div id="request" class="modal hide fade">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">×</button>
+	      <h3>Request [drinkup]</h3>
+	  </div>
+	  <div class="modal-body">
+	      <form class="form-horizontal" name="request" method="post" action="request.php">
+		<fieldset>
+		    <span class="label label-warning">Date--Time:</span>
+		    <input name="date" type="text" placeholder="Example: 1 Jan 2013, 7:00 pm"><br/>
+		    <span class="label label-success">Your name:</span>
+		    <input name="name" type="text" placeholder="Type your name"><br/>
+		    <span class="label label-info">Location is:</span>
+		    <input name="place" type="text" placeholder="Example: Krasnoznamensk City"><br/>
+		    <span class="label label-important">Comments:</span>
+		    <textarea name="comment" rows="5" placeholder="Example: Get more drink!!!"></textarea>
+		 </fieldset>
+	  </div>
+	   <div class="modal-footer">
+	    <button class="btn btn-large btn-danger" data-dismiss="modal">Close</button>
+	    <input type="submit" name="send" value="Request!" class="btn btn-large btn-success">
+	   </div>
+	   </form>
+	  </div>  
+</div>
+      <!-- Example row of columns -->
+      <h2 align=center>Coming [drinkups]:</h2>
+      <div class="row-fluid">
+        <div class="span4">
+          <h4 align=center>KC [drinkup] on Saturday, 27 July<br/>at 7:00 pm</h4>
+		  <p align=center><span class="label label-info">Finished</span></p>
+          <p align=center><a data-toggle="modal" data-target="#lastdrink1" class="btn btn-large btn-info">View details &raquo;</a></p>
+        </div>
+        
+        <div id="lastdrink1" class="modal hide fade">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">×</button>
+	      <h4>KC [drinkup] on Saturday, 27 July at 7:00 pm &nbsp;<span class="label label-info">Finished</span></p></h4>
+	  </div>
+	  <div class="modal-body">
+		<fieldset>
+		    Date & Time:&nbsp;&nbsp;&nbsp;<span class="label label-info">Saturday, 27 July at 7:00 pm</span><br/>
+		    Organizer:&nbsp;&nbsp;&nbsp;<span class="label label-info">toywar (Roman Ekimov)</span><br/>
+		    Location is:&nbsp;&nbsp;&nbsp;<span class="label label-info">Krasnoznamensk City (KC)</span><br/>
+		    Description:&nbsp;&nbsp;&nbsp;<span class="label label-info">Drink Pepsi, go to the cinema</span><br/>
+		    Link on vk.com:&nbsp;&nbsp;&nbsp;<span class="label label-warning"><a href="http://vk.com/underthesea_drinkup?w=wall-44548675_42%2Fall" target="_blank">Wall entry: 42</a></span><br/>
+		 </fieldset>
+	  </div>
+	   <div class="modal-footer">
+	    <!--<button class="btn btn-large btn-danger" data-dismiss="modal">Close</button>-->
+	   </div>
+	   </form>
+	  </div>
+        <br/>
+      </div>
+      <p align=center>Passed [drinkups] on page <a href="past.html">[passed:drinkups]</a>.</p><br/>
+      {% for post in posts %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.timestamp }}</p>
+      <p>{{ post.body }}</p>
+      {% endfor %}
+      <hr/>
+      <div class="footer">
+        <p align=center>&copy; <a href="http://www.toywar.ru/" target="_blank">www.toywar.ru</a>, 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+    <script src="/static/js/bootstrap-dropdown.js"></script>
+    <script src="/static/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/js/bootstrap-tab.js"></script>
+    <script src="/static/js/bootstrap-tooltip.js"></script>
+    <script src="/static/js/bootstrap-popover.js"></script>
+    <script src="/static/js/bootstrap-button.js"></script>
+    <script src="/static/js/bootstrap-collapse.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
