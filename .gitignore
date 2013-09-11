@@ -26,6 +26,10 @@
 *.log
 *.sqlite
 
+# Git Settings #
+################
+.git/*
+
 # OS generated files #
 ######################
 .DS_Store*
