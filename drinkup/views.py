@@ -11,4 +11,9 @@ def base(request):
 
 def view_base(request):
   return render(request, 'base.html')
-  
+
+def view_about(request):
+  return render(request, 'about.html')
+
+def view_past(request):
+  return render(request, 'past.html')

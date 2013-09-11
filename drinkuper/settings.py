@@ -98,7 +98,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'drinkuper.urls'
+ROOT_URLCONF = 'drinkup.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'drinkuper.wsgi.application'
