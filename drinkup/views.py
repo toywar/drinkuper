@@ -1,4 +1,3 @@
-# Create your views here.
 from django.template import loader, Context
 from django.shortcuts import render
 from django.http import HttpResponse
