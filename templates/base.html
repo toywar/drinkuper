@@ -95,7 +95,7 @@
 
     <div class="container">
       <div class="masthead">
-        <h3 align=center class="muted">[toywar:drinkup]</h3>
+        <h3 align="center" class="muted">[toywar:drinkup]</h3>
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
@@ -143,31 +143,34 @@
 	  </div>  
 </div>
       <!-- Example row of columns -->
-      <h2 align=center>Coming [drinkups]:</h2>
+      <h2 align=center>Passed [drinkups]:</h2>
+        {% for drink in drinks %}
       <div class="row-fluid">
         <div class="span4">
-          <h4 align=center>KC [drinkup] on Saturday, 27 July<br/>at 7:00 pm</h4>
+          <h4 align=center>{{ drink.location}} at {{ drink.time }}</h4>
 		  <p align=center><span class="label label-info">Finished</span></p>
           <p align=center><a data-toggle="modal" data-target="#lastdrink1" class="btn btn-large btn-info">View details &raquo;</a></p>
         </div>
-        
+{#        {% endfor %}#}
         <div id="lastdrink1" class="modal hide fade">
 	    <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal">×</button>
-	      <h4>KC [drinkup] on Saturday, 27 July at 7:00 pm &nbsp;<span class="label label-info">Finished</span></p></h4>
+	      {{ drink.location }} at {{ drink.time }} &nbsp;<span class="label label-info">Finished</span>
 	  </div>
+{#        {% for drink in drinks %}#}
 	  <div class="modal-body">
 		<fieldset>
-		    Date & Time:&nbsp;&nbsp;&nbsp;<span class="label label-info">Saturday, 27 July at 7:00 pm</span><br/>
-		    Organizer:&nbsp;&nbsp;&nbsp;<span class="label label-info">toywar (Roman Ekimov)</span><br/>
-		    Location is:&nbsp;&nbsp;&nbsp;<span class="label label-info">Krasnoznamensk City (KC)</span><br/>
-		    Description:&nbsp;&nbsp;&nbsp;<span class="label label-info">Drink Pepsi, go to the cinema</span><br/>
-		    Link on vk.com:&nbsp;&nbsp;&nbsp;<span class="label label-warning"><a href="http://vk.com/underthesea_drinkup?w=wall-44548675_42%2Fall" target="_blank">Wall entry: 42</a></span><br/>
+		    Date & Time:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.time }}</span><br/>
+		    Organizer:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.name }}</span><br/>
+		    Location is:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.location }}</span><br/>
+		    Description:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.comments }}</span><br/>
+		    <!--Link on vk.com:&nbsp;&nbsp;&nbsp;<span class="label label-warning"><a href="http://vk.com/underthesea_drinkup?w=wall-44548675_42%2Fall" target="_blank">Wall entry: 42</a></span><br/>-->
 		 </fieldset>
 	  </div>
 	   <div class="modal-footer">
-	    <!--<button class="btn btn-large btn-danger" data-dismiss="modal">Close</button>-->
+	    <p align="center"><button class="btn btn-large btn-danger" data-dismiss="modal">Close</button></p>
 	   </div>
+        {% endfor %}
 	   </form>
 	  </div>
         <br/>

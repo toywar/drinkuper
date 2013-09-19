@@ -108,7 +108,29 @@
           </div>
         </div><!-- /.navbar -->
       </div>
-<h1> In progress... </h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>#</th>
+                    <th>Date & Time</th>
+                    <th>Location</th>
+                    <th>Organaizer</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.time|date:"l, j F Y"}}</td>
+                        <td>{{ post.location }}</td>
+                        <td>{{ post.name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
       <hr/>
       <div class="footer">
         <p align=center>&copy; <a href="http://www.toywar.ru/" target="_blank">www.toywar.ru</a>, 2013</p>
