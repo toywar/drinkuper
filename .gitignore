@@ -48,3 +48,5 @@ config.py
 media/*
 TEMP/*
 log/*
+templates/temp.html
+drinkup/temp.py

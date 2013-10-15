@@ -21,5 +21,8 @@ def base_request_drinkup(request):
     g = Context({ 'reqs': reqs })
     return HttpResponse(f.render(g))
 
+def view_temp(request):
+  return render(request, 'temp.html')
+
 def view_about(request):
   return render(request, 'about.html')

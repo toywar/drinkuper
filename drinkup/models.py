@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, connection
 from django.contrib import admin
 
 class PassedDrinkup(models.Model):
@@ -27,6 +27,13 @@ class RequestDrinkupAdmin(admin.ModelAdmin):
 
 class PassedDrinkupAdmin(admin.ModelAdmin):
      list_display = ('time', 'name', 'location', 'comments')
+
+#TODO: add database connector
+#def DatabaseConnector():
+#    cursor = connection.cursor()
+#    cursor.execute("SELECT * FROM drinkup_passeddrinkup")
+#    row = cursor.fetchone()
+#    return row
 
 admin.site.register(RequestDrinkup, RequestDrinkupAdmin)
 admin.site.register(PassedDrinkup, PassedDrinkupAdmin)
