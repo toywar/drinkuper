@@ -42,10 +42,8 @@ Thumbs.db
 
 # Project-specific paths #
 ##########################
-
-# local config, deploy config in config.server.py
-config.py
-drinkuper/drinkuper/settings.py
+server.py
 media/*
 TEMP/*
 log/*
+result_static/*
