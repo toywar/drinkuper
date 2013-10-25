@@ -1,5 +1,4 @@
 # Django settings for drinkuper project.
-# FUCK FUEL ECONOMY!
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
