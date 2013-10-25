@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.template import loader, Context
-from django.shortcuts import render
-from django.http import HttpResponse
-from drinkup.models import PassedDrinkup, RequestDrinkup
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
+from drinkup.models import PassedDrinkup, RequestForm
 
 def past_passed_view(request):
     posts = PassedDrinkup.objects.all()
@@ -9,20 +10,41 @@ def past_passed_view(request):
     c = Context({ 'posts': posts })
     return HttpResponse(t.render(c))
 
-def base_passed_view(request):
-    drinks = PassedDrinkup.objects.all()
-    b = loader.get_template("base.html")
-    a = Context({ 'drinks': drinks })
-    return HttpResponse(b.render(a))
+def base_page(request):
+    all_ok = ''
+    if request.method == 'POST':
+        form = RequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            all_ok = u'Your request have been send!'
+            form = RequestForm()
+    else:
+        form = RequestForm()
+    return render(request, 'base.html', {
+            'form': form,
+            'all_ok': all_ok,
+        })
 
-def base_request_drinkup(request):
-    reqs = RequestDrinkup.objects.all()
-    f = loader.get_template("base.html")
-    g = Context({ 'reqs': reqs })
-    return HttpResponse(f.render(g))
-
-def view_temp(request):
-  return render(request, 'temp.html')
+#def base_request_drinkup(request):
+#    reqs = RequestDrinkup.objects.all()
+#    f = loader.get_template("base.html")
+#    g = Context({ 'reqs': reqs })
+#    return HttpResponse(f.render(g))
 
 def view_about(request):
   return render(request, 'about.html')
+
+#def view_temp(request):
+#    all_ok = ''
+#    if request.method == 'POST':
+#        form = RequestForm(request.POST)
+#        if form.is_valid():
+#            form.save()
+#            all_ok = u'Your request have been send!'
+#            form = RequestForm()
+#    else:
+#        form = RequestForm()
+#    return render(request, 'base.html', {
+#        'form': form,
+#        'all_ok': all_ok,
+#    })

@@ -110,21 +110,24 @@
       </div>
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h2>Welcome to toywar & manshion11 [drinkup]!</h2>
-        <p class="lead">We are a group of enthusiasts who love to just sit and have a drink Pepsi (or beer ;) ).
+        <h2 style="font-family: 'trebuchet ms', sans-serif;">Welcome to toywar & manshion11 [drinkup]!</h2>
+        <p class="lead" style="font-family: 'trebuchet ms', sans-serif;">We are a group of enthusiasts who love to just sit and have a drink Pepsi (or beer ;) ).
             But the most important thing - to talk about different topics in the cozy company!<br/><small>
                 Get more information about us on page <a href="/about/">[about]</a>.</small><br/>
-          <h2>Join now! Let's get [drinkup] today!</h2>
+          <h2 style="font-family: 'trebuchet ms', sans-serif;">Join now! Let's get [drinkup] today!</h2>
         </p>
         <a data-toggle="modal" data-target="#request" class="btn btn-large btn-success">Request [drinkup]!</a>
 	<div id="request" class="modal hide fade">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal">×</button>
-	      <h3>Request [drinkup]</h3>
+	      <h3 style="font-family: 'trebuchet ms', sans-serif;">Request [drinkup]</h3>
 	  </div>
 	  <div class="modal-body">
-	      <form class="form-horizontal" name="request" method="post" action="request.php">
+      {% block content %}
+	      <form class="form-horizontal" name="request" method="post" action="">
 		<fieldset>
+
+                <!--
 		    <span class="label label-warning">Date--Time:</span>
 		    <input name="date" type="text" placeholder="Example: 1 Jan 2013, 7:00 pm"><br/>
 		    <span class="label label-success">Your name:</span>
@@ -133,6 +136,13 @@
 		    <input name="place" type="text" placeholder="Example: Krasnoznamensk City"><br/>
 		    <span class="label label-important">Comments:</span>
 		    <textarea name="comment" rows="5" placeholder="Example: Get more drink!!!"></textarea>
+		    -->
+                <h3>{% if all_ok %}{{ all_ok }}{% endif %}</h3>
+                <form method="post" action="">
+                <table>
+                {{ form }}
+                </table>
+
 		 </fieldset>
 	  </div>
 	   <div class="modal-footer">
@@ -140,47 +150,48 @@
 	    <input type="submit" name="send" value="Request!" class="btn btn-large btn-success">
 	   </div>
 	   </form>
+    {% endblock content %}
 	  </div>  
 </div>
-      <!-- Example row of columns -->
-      <h2 align=center>Passed [drinkups]:</h2>
-        {% for drink in drinks %}
-      <div class="row-fluid">
-        <div class="span4">
-          <h4 align=center>{{ drink.location}} at {{ drink.time }}</h4>
-		  <p align=center><span class="label label-info">Finished</span></p>
-          <p align=center><a data-toggle="modal" data-target="#lastdrink1" class="btn btn-large btn-info">View details &raquo;</a></p>
-        </div>
-{#        {% endfor %}#}
-        <div id="lastdrink1" class="modal hide fade">
-	    <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal">×</button>
-	      {{ drink.location }} at {{ drink.time }} &nbsp;<span class="label label-info">Finished</span>
-	  </div>
+      <!-- Example row of columns
+{#      <h2 align=center style="font-family: 'trebuchet ms', sans-serif;"> Passed [drinkups]:</h2>#}
 {#        {% for drink in drinks %}#}
-	  <div class="modal-body">
-		<fieldset>
-		    Date & Time:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.time }}</span><br/>
-		    Organizer:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.name }}</span><br/>
-		    Location is:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.location }}</span><br/>
-		    Description:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.comments }}</span><br/>
-		    <!--Link on vk.com:&nbsp;&nbsp;&nbsp;<span class="label label-warning"><a href="http://vk.com/underthesea_drinkup?w=wall-44548675_42%2Fall" target="_blank">Wall entry: 42</a></span><br/>-->
-		 </fieldset>
-	  </div>
-	   <div class="modal-footer">
-	    <p align="center"><button class="btn btn-large btn-danger" data-dismiss="modal">Close</button></p>
-	   </div>
-        {% endfor %}
-	   </form>
-	  </div>
-        <br/>
-      </div>
-      <p align=center>Passed [drinkups] on page <a href="past.html">[passed:drinkups]</a>.</p><br/>
-      {% for post in posts %}
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.timestamp }}</p>
-      <p>{{ post.body }}</p>
-      {% endfor %}
+{#      <div class="row-fluid">#}
+{#        <div class="span4">#}
+{#          <h4 align=center>{{ drink.location}} at {{ drink.time }}</h4>#}
+{#		  <p align=center><span class="label label-info">Finished</span></p>#}
+{#          <p align=center><a data-toggle="modal" data-target="#lastdrink1" class="btn btn-large btn-info">View details &raquo;</a></p>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#        <div id="lastdrink1" class="modal hide fade">#}
+{#	    <div class="modal-header">#}
+{#	    <button type="button" class="close" data-dismiss="modal">×</button>#}
+{#	      {{ drink.location }} at {{ drink.time }} &nbsp;<span class="label label-info">Finished</span>#}
+{#	  </div>#}
+{#        {% for drink in drinks %}#}
+{#	  <div class="modal-body">#}
+{#		<fieldset>#}
+{#		    Date & Time:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.time }}</span><br/>#}
+{#		    Organizer:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.name }}</span><br/>#}
+{#		    Location is:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.location }}</span><br/>#}
+{#		    Description:&nbsp;&nbsp;&nbsp;<span class="label label-info">{{ drink.comments }}</span><br/>#}
+{#		    <!--Link on vk.com:&nbsp;&nbsp;&nbsp;<span class="label label-warning"><a href="http://vk.com/underthesea_drinkup?w=wall-44548675_42%2Fall" target="_blank">Wall entry: 42</a></span><br/>-->#}
+{#		 </fieldset>#}
+{#	  </div>#}
+{#	   <div class="modal-footer">#}
+{#	    <p align="center"><button class="btn btn-large btn-danger" data-dismiss="modal">Close</button></p>#}
+{#	   </div>#}
+{#        {% endfor %}#}
+{#	   </form>#}
+{#	  </div>#}
+{#        <br/>#}
+{#      </div>#}-->
+      <p align=center style="font-family: 'trebuchet ms', sans-serif;">Passed [drinkups] on page <a href="/past">[passed:drinkups]</a>.</p><br/>
+{#      {% for post in posts %}#}
+{#      <h2>{{ post.title }}</h2>#}
+{#      <p>{{ post.timestamp }}</p>#}
+{#      <p>{{ post.body }}</p>#}
+{#      {% endfor %}#}
       <hr/>
       <div class="footer">
         <p align=center>&copy; <a href="http://www.toywar.ru/" target="_blank">www.toywar.ru</a>, 2013</p>

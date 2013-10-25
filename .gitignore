@@ -45,8 +45,7 @@ Thumbs.db
 
 # local config, deploy config in config.server.py
 config.py
+drinkuper/settings.py
 media/*
 TEMP/*
 log/*
-templates/temp.html
-drinkup/temp.py
