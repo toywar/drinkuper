@@ -2,7 +2,7 @@
 from django.template import loader, Context
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-from drinkup.models import PassedDrinkup, RequestForm
+from drinkup.admin import PassedDrinkup, RequestForm
 
 def past_passed_view(request):
     posts = PassedDrinkup.objects.all()
