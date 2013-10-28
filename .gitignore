@@ -43,6 +43,7 @@ Thumbs.db
 # Project-specific paths #
 ##########################
 server.py
+wsgi.py
 media/*
 TEMP/*
 log/*

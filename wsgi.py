@@ -16,7 +16,7 @@ framework.
 import os
 import sys
 
-path = '/var/www/test.toywar.ru/'
+path = '/var/www/drinkuper/'
 
 if path not in sys.path:
 	    sys.path.append(path)
