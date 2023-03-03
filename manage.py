@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# RELEASE
+# RELEASE 1.0.2
 import os
 import sys
 
