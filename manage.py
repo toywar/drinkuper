@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# RELEASE 1.0.2 sdfdsf
+# RELEASE 1.0.2 sdfdsfasdasdasd
 # wefsef
 import os
 import sys
